@@ -1,0 +1,10 @@
+version: '3'
+
+services: 
+    jupyter:
+        image: jupyter_test:test1
+        build: .
+        ports:
+        - "8888:8888"
+        volumes:
+        - ./work:/home/jovyan/work
