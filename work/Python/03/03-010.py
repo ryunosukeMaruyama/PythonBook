@@ -56,3 +56,25 @@ y_pred = lr_multi2.predict(X_test)
 print(mean_absolute_error(y_pred, y_test))
 
 # %%
+# ラッソ回帰
+lasso = Lasso(alpha=0.01, normalize=True)
+lasso.fit(X_train, y_train)
+print(lasso.coef_)
+print(lasso.intercept_)
+
+# %%
+y_pred_lasso = lasso.predict(X_test)
+mean_absolute_error(y_pred_lasso, y_test)
+
+# %%
+# リッジ回帰
+ridge = Ridge(alpha=0.01, normalize=True)
+ridge.fit(X_train, y_train)
+print(ridge.coef_)
+print(ridge.intercept_)
+
+# %%
+y_pred = ridge.predict(X_test)
+mean_absolute_error(y_pred, y_test)
+
+# %%
